@@ -1,0 +1,7 @@
+Builder w klasie Name
+Template w ShoppingCart.checkout() oraz konstruktorze Order
+Singleton w OrderFactory (factory jest singletonem) - zeby byl staly ciag orderID
+Visitor w Order.addToOrder()|removeFromOrder(), ktory odwiedza Product
+Facade w Customer zeby nie tworzyc Name w App
+Factory w Product (zeby mozna bylo tworzyc tak samo Food i Drink podajac tylko argument)
+Strategy w PaymentStrategy
