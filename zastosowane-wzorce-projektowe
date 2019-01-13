@@ -5,3 +5,6 @@ Visitor w Order.addToOrder()|removeFromOrder(), ktory odwiedza Product
 Facade w Customer zeby nie tworzyc Name w App
 Factory w Product (zeby mozna bylo tworzyc tak samo Food i Drink podajac tylko argument)
 Strategy w PaymentStrategy
+Builder z Directorem w klasie PizzaDirector i IPizzaBuilder
+Decorator klasa SasuedPizza
+Iterator przy przegladaniu kolekcji w klasie Builderów
