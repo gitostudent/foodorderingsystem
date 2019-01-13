@@ -1,10 +1,10 @@
 package models.orders.states.ShoppingCart;
 
-import models.products.Product;
+import models.products.IProduct;
 
 public class ShoppingCartVisitor implements IShoppingCartVisitor {
 
-    public double visit(Product product) {
+    public double visit(IProduct product) {
         return product.getPrice();
     }
 }
