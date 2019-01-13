@@ -2,7 +2,7 @@ package models.products;
 
 import models.orders.states.ShoppingCart.ShoppingCartVisitor;
 
-public class Drink implements Product {
+public class Drink implements IProduct {
 
     private int id;
     private String name;
@@ -16,6 +16,11 @@ public class Drink implements Product {
 
     public double accept(ShoppingCartVisitor visitor) {
         return visitor.visit(this);
+    }
+
+    @Override
+    public int getId() {
+        return id;
     }
 
     public double getPrice() {

@@ -5,7 +5,7 @@ import models.orders.Order;
 import models.orders.OrderSingleton;
 import models.orders.payment.credentials.*;
 import models.orders.payment.strategies.*;
-import models.products.Product;
+import models.products.IProduct;
 
 import java.util.Scanner;
 
@@ -38,11 +38,11 @@ public class ShoppingCart {
         paymentStrategy.pay(order.getTotalPrice());
     }
 
-    public void addToOrder(Product food) {
+    public void addToOrder(IProduct food) {
         order.addToOrder(food);
     }
 
-    public void removeFromOrder(Product food) {
+    public void removeFromOrder(IProduct food) {
         order.removeFromOrder(food);
     }
 

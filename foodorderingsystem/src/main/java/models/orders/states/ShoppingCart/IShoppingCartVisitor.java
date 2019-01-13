@@ -1,8 +1,8 @@
 package models.orders.states.ShoppingCart;
 
-import models.products.Product;
+import models.products.IProduct;
 
 public interface IShoppingCartVisitor {
 
-    double visit(Product food);
+    double visit(IProduct food);
 }

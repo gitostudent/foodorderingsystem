@@ -4,7 +4,8 @@ import models.orders.states.FinishedState;
 import models.orders.states.OrderState;
 import models.orders.states.ShoppingCart.ShoppingCartVisitor;
 import models.orders.states.StartedState;
-import models.products.Product;
+import models.products.IProduct;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,24 +15,24 @@ public class Order {
     private int id;
     private int customerId;
     private double totalPrice;
-    private List<Product> items;
+    private List<IProduct> items;
     private ShoppingCartVisitor visitor;
     private OrderState state;
 
     public Order(int id, int customerId) {
         this.id = id;
         this.customerId = customerId;
-        items = new ArrayList<Product>();
+        items = new ArrayList<IProduct>();
         visitor = new ShoppingCartVisitor();
         setState(new StartedState());
     }
 
-    public void addToOrder(Product food) {
+    public void addToOrder(IProduct food) {
         this.items.add(food);
         this.totalPrice += food.accept(visitor);
     }
 
-    public void removeFromOrder(Product food) {
+    public void removeFromOrder(IProduct food) {
         items.remove(food);
         this.totalPrice -= food.accept(visitor);
     }
@@ -57,7 +58,7 @@ public class Order {
         return totalPrice;
     }
 
-    public List<Product> getItems() {
+    public List<IProduct> getItems() {
         return items;
     }
 }
